@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MALAD GLOBAL CONCEPT</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="card" id="poster">
+    <!-- Background world map -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" class="worldmap" alt="world map">
+
+    <!-- Logo (SVG) -->
+    <div class="logo">
+      <img src="logo.svg" alt="Logo">
+    </div>
+
+    <!-- Top-right Info -->
+    <div class="top-right">
+      <h3>CEO: Engr. Hammed Olowojare</h3>
+      <p>📍 Abuja</p>
+      <p>📞 +2348035876545</p>
+      <p>✉ asgo2004@yahoo.com</p>
+    </div>
+
+    <!-- Center Content -->
+    <div class="center">
+      <h2 class="tagline">Engineering Solutions for a Global Future</h2>
+      <h1 class="company">MALAD GLOBAL CONCEPT</h1>
+      <h3 class="location">📍 Abuja</h3>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2025 <span class="brand">Jare's Choice Labs</span> — Designed with passion</p>
+    </div>
+  </div>
+
+  <!-- Download button (outside poster) -->
+  <div class="download">
+    <button id="downloadBtn">⬇ Download Poster</button>
+  </div>
+
+  <!-- html2canvas for screenshot -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    document.getElementById("downloadBtn").addEventListener("click", function() {
+      html2canvas(document.getElementById("poster")).then(canvas => {
+        let link = document.createElement("a");
+        link.download = "Malad_Poster.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    });
+  </script>
+</body>
+</html>
